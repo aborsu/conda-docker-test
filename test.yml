@@ -295,7 +295,6 @@ dependencies:
   - graphviz==0.9
   - greenlet==0.4.15
   - gunicorn==19.9.0
-  - hdbscan==0.8.18
   - humanfriendly==4.16.1
   - itsdangerous==0.24
   - imbalanced-learn==0.3.3
