@@ -1,5 +1,5 @@
 FROM continuumio/miniconda3
-ADD customer_analytics.yml /tmp/customer_analytics.yml
-RUN tail -n +5 /tmp/customer_analytics.yml > /tmp/customer_analytics_no_channels.yml && conda env create -n customer_analytics -f /tmp/customer_analytics_no_channels.yml
-RUN echo "source activate customer_analytics" > ~/.bashrc
-ENV PATH /opt/conda/envs/customer_analytics/bin:$PATH
+ADD test.yml /tmp/test.yml
+RUN tail -n +5 /tmp/test.yml > /tmp/test_no_channels.yml && conda env create -n test -f /tmp/test_no_channels.yml
+RUN echo "source activate test" > ~/.bashrc
+ENV PATH /opt/conda/envs/test/bin:$PATH
