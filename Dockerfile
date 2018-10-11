@@ -1,7 +1,6 @@
 FROM continuumio/miniconda3
-RUN soure activate && conda install gcc
+RUN conda install gcc_linux-64
 
 ADD test.yml /tmp/test.yml
-RUN tail -n +5 /tmp/test.yml > /tmp/test_no_channels.yml && conda env create -n test -f /tmp/test_no_channels.yml
-RUN echo "source activate test" > ~/.bashrc
-ENV PATH /opt/conda/envs/test/bin:$PATH
+RUN tail -n +5 /tmp/test.yml > /tmp/test_no_channels.yml
+RUN bash -c "source activate root && conda env update -f /tmp/test_no_channels.yml"
